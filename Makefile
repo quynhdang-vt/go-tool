@@ -19,6 +19,7 @@ gen-build-manifest:
 	sh ./gen-build-manifest.sh
 
 .PHONY: build-docker
+build-docker:
 	docker build -t $(DOCKER_REG)/${IMAGE_NAME}:$(IMAGE_TAG) --build-arg ARG_GITHUB_ACCESS_TOKEN=$(GITHUB_ACCESS_TOKEN) .
 
 # this assumes the following has been done:
